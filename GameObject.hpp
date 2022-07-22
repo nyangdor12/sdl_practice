@@ -1,5 +1,6 @@
 #pragma once
 #include "Game.hpp"
+#include "TextureManager.hpp"
 
 class GameObject {
     public:

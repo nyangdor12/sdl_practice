@@ -3,7 +3,7 @@
 #include "GameObject.hpp"
 
 GameObject* player;
-
+GameObject* enemy;
 
 Game::Game()
 {
@@ -44,6 +44,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     }
 
     player = new GameObject("assets/character.png", renderer,0,0);
+    enemy = new GameObject("assets/enemy.png", renderer, 50, 50);
 }
 
 void Game::handleEvents()
@@ -63,6 +64,7 @@ void Game::handleEvents()
 void Game::update()
 {
     player->Update();
+    enemy->Update();
 }
 
 bool Game::running()
@@ -74,6 +76,7 @@ void Game::render()
 {
     SDL_RenderClear(renderer);
     player->Render();
+    enemy->Render();
     SDL_RenderPresent(renderer);
 }
 

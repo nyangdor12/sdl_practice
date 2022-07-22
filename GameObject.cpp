@@ -16,7 +16,7 @@ void GameObject::Update()
     ypos++;
 
     srcRect.h = 32;
-    srcRect.w = 32;
+    srcRect.w = 48;
     srcRect.x = 0;
     srcRect.y = 0;
 
@@ -28,5 +28,5 @@ void GameObject::Update()
 
 void GameObject::Render()
 {
-    SDL_RenderCopy(renderer, objTexture, &srcRect, &destRect);
+    SDL_RenderCopy(renderer, objTexture, NULL, &destRect);
 }
