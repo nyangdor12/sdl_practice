@@ -54,17 +54,18 @@ class Entity
         void update()
         {
             for(auto& c : components) c ->update();
-            for(auto& c : components) c->draw();
         }
 
-        void draw(){}
+        void draw(){
+            for(auto& c: components) c->draw();
+        }
         bool isActive() const {return active;}
         void destroy(){active=false;}
 
         template <typename T> bool hasComponent() const
         {
-            //in tutorial it's [getComponentID<T>] but i got an error that asks if i meant getComponent so i changed it to that
-            return componentBitSet[getComponent<T>];
+            //in tutorial it's [getComponentID<T>] but i got an error that asks if i meant getComponent so i changed it to that. then someone in the comment mentioned it's getComponentTypeID() so i changed it agian
+            return componentBitSet[getComponentTypeID<T>];
         }
 
         template <typename T, typename... TArgs>
