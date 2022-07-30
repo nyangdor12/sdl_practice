@@ -65,7 +65,7 @@ class Entity
         template <typename T> bool hasComponent() const
         {
             //in tutorial it's [getComponentID<T>] but i got an error that asks if i meant getComponent so i changed it to that. then someone in the comment mentioned it's getComponentTypeID() so i changed it agian
-            return componentBitSet[getComponentTypeID<T>];
+            return componentBitSet[getComponentTypeID<T>()];
         }
 
         template <typename T, typename... TArgs>
