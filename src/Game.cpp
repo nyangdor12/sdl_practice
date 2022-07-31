@@ -2,7 +2,7 @@
 #include "TextureManager.hpp"
 #include "Map.hpp"
 
-#include "ECS/Components.h"
+#include "../ECS/Components.h"
 #include "Vector2D.h"
 #include "Collision.h"
 
