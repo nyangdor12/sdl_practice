@@ -9,7 +9,8 @@ SDL_Texture* TextureManager::LoadTexture(const char* texture)
     return tex;
 };
 
-void TextureManager::Draw(SDL_Texture* tex, SDL_Rect src, SDL_Rect dest)
+void TextureManager::Draw(SDL_Texture* tex, SDL_Rect src, SDL_Rect dest, SDL_RendererFlip flip)
 {
-    SDL_RenderCopy(Game::renderer, tex, &src, &dest);
+    //to manage multiple animations we are using sdl_rendercopyex instead of sdl_rendercopy for extra features like rotation
+    SDL_RenderCopyEx(Game::renderer, tex, &src, &dest, 0.0, NULL, flip);
 }
