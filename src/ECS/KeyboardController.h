@@ -66,6 +66,9 @@ class KeyboardController : public Component
                         transform->velocity.y = 0;
                         sprite->Play("Idle");
                         break;
+                    case SDLK_ESCAPE:
+                        Game::isRunning = false;
+                        break;
                     default:
                         break;
                 }
